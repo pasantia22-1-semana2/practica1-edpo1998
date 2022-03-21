@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="wrapper">
+        <main>
+            <div class="headapp">
+                <section class="headapp__details">
+                    <h1> Presupuesto Disponible </h1>
+                    <div class="headapp__details__total"><p id="totaldisponible">$2,297.50</p></div>
+                   
+                    <div class="headapp__details__ineg">
+                        <div class="headapp__details__ineg__box--aqua">
+                            <p class="Detailtext">INGRESOS</p>
+                            <p id="totalingresos">$2,297.50</p>
+                        </div>
+                    </div>
+                   
+                    <div class="headapp__details__ineg">
+                        <div class="headapp__details__ineg__box--orange">
+                            <p class="Detailtext">EGRESOS</p>
+                            <p id = "totalegresos">$2,297.50</p>
+                            <p id = "peregresos">1.00%</p>
+                        </div>
+                   
+                    </div>
+                </section>
+            </div>
+            <div class="activity">
+                <form id="activity__op">
+                    <select name="" id="selectorOp">
+                        <option value="-">-</option>
+                        <option value="+">+</option>
+                    </select>
+                    <input type="text" id="book" name="book" placeholder="Input Description">
+                    <input type="number" id="quantity" name="quantity" min="0" placeholder="Valor" >
+                    <button type="button" onclick="senData()"><ion-icon name="checkmark-circle-outline"></ion-icon></button>
+                  </form>
+            </div>
+            <div class="details">
+                <div class="details__ingresos">
+                    <section>
+                        <h2 class="details__ingresos__title--aqua"> Ingresos </h2>
+                        <table class="tabledisplay" >
+                            <tbody id="ingresostbl">
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+                <div class="details__egresos"> 
+                    <section>
+                        <h2 class="details__ingresos__title--orange"> Egresos </h2>
+                        <table class="tabledisplay">
+                            <tbody id="egresostbl">
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="js/Ingreso.js"></script>
+    <script src="js/Egreso.js"></script>
+    <script src="js/Dato.js"></script>
+    <script src="js/app.js"> </script>
+
+</body>
+</html>

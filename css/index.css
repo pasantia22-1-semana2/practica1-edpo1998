@@ -1,0 +1,152 @@
+:root {
+    --aqua: #17a2b8;
+    --orange: #fd7d14a2;
+  }
+
+*,*::before,*::after{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+button {
+    margin: 1rem;
+    color: green;
+    text-align: center;
+    font-size: 2rem;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+select{
+    font-size: 1.5rem;
+}
+#book{
+    font-size: 1.5rem;
+    width: 20%;
+}
+
+#totaldisponible{
+    font-size: 3rem;
+}
+
+#quantity{
+    font-size: 1.5rem;
+    width: 10%;
+}
+
+.wrapper{
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.headapp{
+    color: white;
+    background-color: #1c1c3b;
+    padding:  2rem;
+}
+
+.headapp__details__ineg{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.headapp__details__ineg__box--aqua{
+    display: grid;
+    width: 50%;
+    grid-template-columns: 60% 50%;
+    grid-gap: 2rem;
+    background-color: var(--aqua);
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+.headapp__details__ineg__box--orange{
+    display: grid;
+    width: 50%;
+    grid-template-columns: 50% 20% 20%;
+    grid-gap: 2rem;
+    background-color: var(--orange);
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+.Detailtext{
+    text-align: left;
+}
+
+.activity{
+    padding: 2rem;    
+    background-color: silver;
+}
+
+.details{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.details__ingresos{
+    width: 700px;
+    height: auto;
+    margin: 1rem;
+    
+}
+
+.details__egresos{
+    width: 700px;
+    height: auto;
+    margin: 1rem;
+}
+
+.tabledisplay{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+.tabledisplay td, .tabledisplay th {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: auto;
+    background-color: transparent;
+
+}
+
+.tabledisplay tr:hover {background-color: #ddd;}
+
+.details__ingresos__title--aqua{
+    color: var(--aqua);
+}
+
+.details__ingresos__title--orange{
+    color: var(--orange);
+}
+
+.details__ingresos__text--aqua{
+    color: var(--aqua);
+}
+
+.details__ingresos__text--orange{
+    color: var(--orange);
+    font-weight: bold;
+}
+
+.bordertext{
+    display: inline;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(248, 163, 15, 0.438);
+    
+}
+
+
+
+
