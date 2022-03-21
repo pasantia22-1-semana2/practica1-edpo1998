@@ -5,7 +5,7 @@ const ingresos = [
 ];
 
 /* Egresos en el Presupuesto */
-const egresos = [
+let egresos = [
     new Egreso('Renta Departamento',900),
     new Egreso('Ropa',400)
 ];
@@ -108,18 +108,24 @@ const cargarEgresos = () => {
     egresos.map((row) =>{
         datarow = `<td>${row.name}</td>
             <td class ="details__ingresos__text--orange">${formatMoney(row.value)}</td>
-            <td id=egreso_${row.id} class="details__ingresos__text--orange "><div class="bordertext">${(row.value/totalEgresos()).toFixed(2)}%</div></td> \n`
+            <td id=egreso_${row.id} class="details__ingresos__text--orange "><div class="bordertext">${(row.value/totalEgresos()).toFixed(2)}%</div></td>
+            <td><button class="closerow" onclick="deleteEgreso(${row.id})"><ion-icon name="close-circle-outline"></ion-icon></button></td> \n`
         const layout = document.createElement("tr")
         layout.innerHTML = datarow;
+        layout.className = `row_${row.id}`
         document.getElementById("egresostbl").appendChild(layout)
     });
 }
 
 
 const cargarEgresoIndividual = (name,value,id) =>{
-    datarow = `<td>${name}</td><td class="details__ingresos__text--orange">${formatMoney(value)}</td><td id=egreso_${id}  class="details__ingresos__text--orange bordertext"><div class="bordertext">${(value/totalIngresos()).toFixed(2)}%</div></td> \n`
+    datarow = `<td>${name}</td>
+    <td class ="details__ingresos__text--orange">${formatMoney(value)}</td>
+    <td id=egreso_${id} class="details__ingresos__text--orange "><div class="bordertext">${(value/totalEgresos()).toFixed(2)}%</div></td>
+    <td><button class="closerow" onclick="deleteEgreso(${id})"><ion-icon name="close-circle-outline"></ion-icon></button></td> \n`
     const layout = document.createElement("tr")
     layout.innerHTML = datarow;
+    layout.className = `row_${id}`
     document.getElementById("egresostbl").appendChild(layout)
 }
 
@@ -151,6 +157,15 @@ const PresupuestoDisponible = () =>{
     return totalIngresos() - totalEgresos()
 }
 
+const deleteEgreso = (valor) =>{
+    egresos = egresos.filter((eg)=> eg.id !== valor)
+    colocarIngresos()
+    colocarEgresos()
+    colocarPresupuesto()
+    updatePercentage()
+    const element = document.getElementsByClassName(`row_${valor}`);
+    element[0].parentElement.removeChild(element[0])
+}
 
 //Render Inicial
 
